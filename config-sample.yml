@@ -1,0 +1,13 @@
+# Put real keys/tokens in config.yml at root of project
+twilio_sid: 'ABC123'
+twilio_token: 'XYZ8910'
+forecast_api_key: 'DEF456'
+#Colorado College
+city_1: 'Colorado Springs'
+city_1_lat: 38.846594
+city_1_lon: -104.824394
+
+# University of Washington
+city_2: 'Seattle'
+city_2_lat: 47.655335
+city_2_lon: -122.303520

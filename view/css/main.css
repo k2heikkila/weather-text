@@ -1,0 +1,80 @@
+body{
+  margin:0;
+  padding:12px;
+  font-family: "Arial Rounded MT Bold";
+  background-color:black;
+  color:white;
+  width:740px;
+}
+
+header{
+  display:block;
+  width:100%;
+  clear:both;
+  margin-bottom:24px;
+  height:90px;
+}
+
+div#date-time{
+  width:220px;
+  float:left;
+  margin-right:14px;
+}
+
+h1#time{
+  margin:0;
+  padding:0;
+  font-size:48px;
+}
+h2#date{
+  margin:0;
+  padding:0;
+}
+
+h3{
+  text-align:center;
+  font-size:32px;
+  margin:0 0 15px 0;
+  padding:0;
+}
+
+#last-text{
+  font-size:1.25em;
+  font-weight:600;
+}
+
+#last-text-time{
+  font-size:0.8em;
+  font-weight:normal;
+  font-style: italic;
+}
+
+span.temp{
+  font-weight: 600;
+  font-size:48px;
+  float:left;
+}
+
+div.icon-wrapper{
+  margin: 0 10px;
+  display:inline-block;
+}
+
+.city{
+  display: inline-block;
+  width:44%;
+  height:220px;
+}
+
+.city:first-of-type{
+  margin: 0 60px 0 0;
+}
+
+.mid {
+  width:26%;
+  float:right;
+}
+.mid span{
+  font-size:1.2em;
+  font-weight:500;
+}
