@@ -13,10 +13,10 @@ class Runner
   def get_last_message()
     if @last_message.nil? || refresh_message?
       puts "Refreshing Message..."
-      twilio_client = Twilio::REST::Client.new @@config['twilio_account_sid'], @@config['twilio_auth_token']
+      twilio_client = Twilio::REST::Client.new @@config['twilio_sid'], @@config['twilio_token']
       @last_message = twilio_client.messages.list.first
     end
-    {message:@last_message.body.strip(), time: Time.now}
+    {message:@last_message.body.strip(), time: @last_message.date_created}
   end
 
   def refresh_message?
@@ -31,8 +31,8 @@ class Runner
     if @forecast_1.nil? || @forecast_2.nil? || refresh_forecast?
       puts "Refreshing forecast..."
       ForecastIO.api_key = @@config['forecast_api_key']
-      @forecast_1 = ForecastIO.forecast(@@config['lat_1'], @@config['lon_1'])
-      @forecast_2 = ForecastIO.forecast(@@config['lat_2'], @@config['lon_2'])
+      @forecast_1 = ForecastIO.forecast(@@config['city_1_lat'], @@config['city_1_lon'])
+      @forecast_2 = ForecastIO.forecast(@@config['city_2_lat'], @@config['city_2_lon'])
     end
     [@forecast_1, @forecast_2]
   end
@@ -70,7 +70,7 @@ class Runner
         date:           time.strftime("%B %e").strip(),
         time:           time.strftime("%l:%M %p").strip(),
         lastText:       last_message[:message],
-        lastTextTime:   last_message[:time]
+        lastTextTime:   tz.utc_to_local(last_message[:time]).strftime("%B %e, %l:%M %p").strip()
       }
 
       path = File.join(File.dirname(__FILE__),"view/data.json")

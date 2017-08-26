@@ -51,12 +51,14 @@
            document.getElementById('city2-high').innerHTML= 'High: ' + Math.round(data['city2High']).toString();
            document.getElementById('city2-low').innerHTML= 'Low: ' + Math.round(data['city2Low']).toString();
 
-          //  document.getElementById('city1-summary').innerHTML= data['city1Summary'];
+           document.getElementById('city1-summary').innerHTML= data['city1Summary'];
            document.getElementById('city1-temp').innerHTML= Math.round(data['city1Temp']).toString() + '&#176;';
-          //  document.getElementById('city2-summary').innerHTML= data['city2Summary'];
+           document.getElementById('city2-summary').innerHTML= data['city2Summary'];
            document.getElementById('city2-temp').innerHTML= Math.round(data['city2Temp']).toString() + '&#176;';
 
            document.getElementById('last-text').innerHTML = data['lastText'];
+           document.getElementById('last-text-time').innerHTML = data['lastTextTime'];
+
 
            document.getElementById('date').innerHTML = data['date'];
            document.getElementById('time').innerHTML = data['time'];
